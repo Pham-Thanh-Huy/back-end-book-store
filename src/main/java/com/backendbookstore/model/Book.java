@@ -3,19 +3,16 @@ package com.backendbookstore.model;
 import java.util.List;
 
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-
+ 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+
 
 import lombok.Data;
 
 @Data
-@Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,11 +44,5 @@ public class Book {
     private List<Evaluation> evaluationList;
     private List<OrderDetails> orderDetailsList;
     private List<FavouriteBook> favouriteBookList;
-
-    // @ManyToMany()
-    private List<Category> listCategory;
-    private List<Image> listImage;
-    private List<Evaluation> listEvaluation;
-    private List<ShoppingCartDetail> listShoppingCartDetail;
 
 }
