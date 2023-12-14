@@ -3,19 +3,19 @@ package com.backendbookstore.model;
 import java.util.List;
 
 
-import jakarta.annotation.Generated;
+
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+
 
 import lombok.Data;
 
 @Data
-@Entity
+
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,13 +27,11 @@ public class Book {
     private String authorName;
     @Column(name = "isbn")
     private String ISBN;
-
+    @Column(name = "description")
     private String description; // mô tả
-
     @Column(name = "describe")
     private String describe; // mô tả
     @Column(name = "listed_price")
-
     private double listedPrice;
     @Column(name = "price")
     private double price;
@@ -41,17 +39,13 @@ public class Book {
     private int quantity;
     @Column(name = "rate")
     private double rate; // đánh giá (vd: 5 sao)
-
+    @Column(name = "category_list")
     private List<Category> categoryList;
+    @Column(name = "image_list")
     private List<Image> imageList;
     private List<Evaluation> evaluationList;
     private List<OrderDetails> orderDetailsList;
     private List<FavouriteBook> favouriteBookList;
 
-    // @ManyToMany()
-    private List<Category> listCategory;
-    private List<Image> listImage;
-    private List<Evaluation> listEvaluation;
-    private List<ShoppingCartDetail> listShoppingCartDetail;
 
 }
