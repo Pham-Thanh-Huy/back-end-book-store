@@ -1,5 +1,6 @@
 package com.backendbookstore;
 
+import com.backendbookstore.model.Category;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

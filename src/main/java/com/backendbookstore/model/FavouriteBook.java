@@ -3,8 +3,8 @@ package com.backendbookstore.model;
 import lombok.Data;
 
 @Data
-public class ShoppingCartDetail {
-    private long id;
+public class FavouriteBook {
+    private int id;
+    private User user;
     private Book book;
-    private int quantity;
 }

@@ -1,6 +1,7 @@
 package com.backendbookstore.model;
 
 import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -9,13 +10,14 @@ public class Book {
     private String bookName;
     private String authorName;
     private String ISBN;
-    private String describe; // mô tả
+    private String description; // mô tả
     private double listedPrice;
     private double price;
     private int quantity;
     private double rate; // đánh giá (vd: 5 sao)
-    private List<Category> listCategory;
-    private List<Image> listImage;
-    private List<Evaluation> listEvaluation;
-    private List<ShoppingCartDetail> listShoppingCartDetail;
+    private List<Category> categoryList;
+    private List<Image> imageList;
+    private List<Evaluation> evaluationList;
+    private List<OrderDetails> orderDetailsList;
+    private List<FavouriteBook> favouriteBookList;
 }
