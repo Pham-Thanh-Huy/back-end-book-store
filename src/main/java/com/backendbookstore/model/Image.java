@@ -1,13 +1,10 @@
 package com.backendbookstore.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
+@Entity
 public class Image {
     @Column(name = "image_id")
     private int imageId;

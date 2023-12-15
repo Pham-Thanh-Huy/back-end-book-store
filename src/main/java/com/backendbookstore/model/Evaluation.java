@@ -2,10 +2,12 @@ package com.backendbookstore.model;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
+@Entity
 public class Evaluation {
     @Column(name = "evaluation_id")
     private long evaluationId;
