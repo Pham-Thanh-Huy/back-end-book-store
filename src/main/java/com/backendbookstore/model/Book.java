@@ -54,7 +54,12 @@ public class Book {
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Evaluation> evaluationList;
 
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH })
     private List<OrderDetails> orderDetailsList;
+
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH })
     private List<FavouriteBook> favouriteBookList;
 
 }
