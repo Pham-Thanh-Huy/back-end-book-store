@@ -1,17 +1,11 @@
 package com.backendbookstore.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "order_details")
 public class OrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +20,10 @@ public class OrderDetails {
             CascadeType.DETACH, CascadeType.REFRESH })
     @JoinColumn(name = "book_id")
     private Book book;
+
+    @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH })
+    @JoinColumn(name = "order_id")
     private Order order;
 
 }
