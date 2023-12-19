@@ -32,8 +32,6 @@ public class Book {
     private String ISBN;
     @Column(name = "description", columnDefinition = "text")
     private String description; // mô tả
-    @Column(name = "describe")
-    private String describe; // mô tả
     @Column(name = "listed_price")
     private double listedPrice;
     @Column(name = "price")
@@ -42,7 +40,6 @@ public class Book {
     private int quantity;
     @Column(name = "rate")
     private double rate; // đánh giá (vd: 5 sao)
-
     @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.REFRESH })
     @JoinTable(name = "book_category", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
