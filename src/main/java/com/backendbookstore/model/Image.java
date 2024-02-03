@@ -17,7 +17,7 @@ public class Image {
     private boolean isIcon; // kiem tra xem co phai icon khong
     @Column(name = "link")
     private String link;
-    @Column(name = "data")
+    @Column(name = "data", columnDefinition = "LONGTEXT")
     @Lob
     private String data;
 

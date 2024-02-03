@@ -7,4 +7,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(path = "permission")
 public interface PermissionRepository extends JpaRepository<Permission, Integer> {
+    public  Permission findByPermissionName(String permissionName);
 }

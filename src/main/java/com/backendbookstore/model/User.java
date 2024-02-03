@@ -17,7 +17,7 @@ public class User {
     private String lastName;
     @Column(name = "first_name")
     private String firstName;
-    @Column(name = "username")
+    @Column(name = "username")  
     private String username; // tên đăng nhập
     @Column(name = "password")
     private String password;
@@ -36,7 +36,7 @@ public class User {
     @OneToMany(mappedBy = "user",fetch = FetchType.LAZY, cascade =  {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST})
     private List<FavouriteBook> favouriteBookList;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.PERSIST})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.PERSIST})
     @JoinTable(name = "user_permission", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
     private List<Permission> permissionList;
 
