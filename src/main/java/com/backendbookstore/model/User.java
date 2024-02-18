@@ -29,7 +29,13 @@ public class User {
     private String phoneNumber;
     @Column(name = "address")
     private String address;
-
+    @Column(name = "is_active")
+    private boolean isActive;
+    @Column(name = "code_active")
+    private String codeActive;
+    @Column(name = "avatar", columnDefinition = "LONGTEXT")
+    @Lob
+    private String avatar;
     @OneToMany(mappedBy = "user",fetch = FetchType.LAZY, cascade =  {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST})
     private List<Evaluation> evaluationList;
 
@@ -42,4 +48,27 @@ public class User {
 
     @OneToMany(mappedBy = "user",fetch = FetchType.LAZY, cascade =  {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST})
     private List<Order> orderList;
+
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", sex=" + sex +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", isActive=" + isActive +
+                ", codeActive='" + codeActive + '\'' +
+                ", evaluationList=" + evaluationList +
+                ", favouriteBookList=" + favouriteBookList +
+                ", permissionList=" + permissionList +
+                ", orderList=" + orderList +
+                '}';
+    }
 }
